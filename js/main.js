@@ -1,20 +1,10 @@
 /**
-  Computer exercise for TNM093
-  Course responsible: Alexander Bock
-  Created by: Kahin Akram
-  August 2020
+ * @Created Jan 25, 2018
+ * @LastUpdate Jan 31, 2020
+ * @author Kahin Akram
  */
-queue()
-    .defer(d3.csv, 'data/socialScience.csv')
-    .await(draw);
 
-var sp, pc, info;
-
-function draw(error, data)
-{
-    if (error) throw error;
-
-    sp = new sp(data);
-    pc = new pc(data);
-    info = new info(data);
-}
+ array = $.csv.toArrays(csv, {
+  delimiter: "'", 
+  separator: ';', // Sets a custom field separator character
+});

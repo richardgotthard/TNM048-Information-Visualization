@@ -1,35 +1,22 @@
-div.sp-container, div.pc-container, div.info-container {
-    height : 44vh;
-    overflow-x:scroll;
-}
-
-svg {
-  font: 10px sans-serif;
-}
 
 .background path {
   fill: none;
-  stroke: #ddd;
-  shape-rendering: crispEdges;
+  stroke: lightgray;
+  stroke-width: 0.5px;
+  pointer-events: stroke;
 }
 
 .foreground path {
   fill: none;
-  stroke-width:0.4px;
-  stroke: darkturquoise;
+  stroke: steelblue;
+  stroke-width: 0.5px;
 }
 
-.active .label:not(.inactive) {
+.axis .title {
+  font-size: 11px;
   font-weight: bold;
-  stroke-width: 3px;
+  text-transform: uppercase;
 }
-
-.foreground path.inactive {
-  stroke: #ccc;
-  stroke-opacity: .1;
-  stroke-width: 0.7px;
-}
-
 
 .axis line,
 .axis path {
@@ -38,18 +25,71 @@ svg {
   shape-rendering: crispEdges;
 }
 
-.axis text {
-  fill:black;
-  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+.axis.string {
+  font-size: 6px;
 }
 
-.font-size{
-  font-size: 12px
+.label {
+  -webkit-transition: fill 125ms linear;
 }
 
-.dotSelected {
-  opacity: 1 !important;
-  stroke: black;
-  stroke-width: 2px;
-  fill: deeppink !important;
+.active .label:not(.inactive) {
+  font-weight: bold;
+  font-size: 11px;
 }
+
+.label.inactive {
+  fill: #ccc;
+}
+
+.foreground path.inactive {
+  stroke: #ccc;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+}
+
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.brushed {
+    stroke: #8e1b54;
+    opacity: 1.0;
+}
+
+.non_brushed {
+    opacity: 0.5;
+}
+
+      svg {
+      font: 10px sans-serif;
+      }
+
+
+      .brush .extent {
+      fill-opacity: .3;
+      stroke: #fff;
+      shape-rendering: crispEdges;
+      }
+
+      .axis line,
+      .axis path {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+      }
+
+      .axis text {
+      text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+      cursor: move;
+      }
